@@ -16,21 +16,21 @@ ActiveRecord::Schema.define(version: 2023_01_31_171728) do
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string "name"
     t.string "city"
     t.boolean "alive_today"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "works", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string "title"
     t.boolean "available_for_purchase"
-    t.bigint "artists_id"
-    t.index ["artists_id"], name: "index_works_on_artists_id"
+    t.bigint "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_works_on_artist_id"
   end
 
-  add_foreign_key "works", "artists", column: "artists_id"
+  add_foreign_key "works", "artists"
 end

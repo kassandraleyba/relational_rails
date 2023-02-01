@@ -3,7 +3,7 @@ class CreateWorks < ActiveRecord::Migration[5.2]
     create_table :works do |t|
       t.string :title
       t.boolean :available_for_purchase
-      t.references :artists, index: true, foreign_key: true
+      t.references :artist, index: true, foreign_key: true
       t.timestamps
     end
   end
