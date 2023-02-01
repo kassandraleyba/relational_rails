@@ -1,1 +1,6 @@
-<h1>this is the works view</h1>
+<h1>Artist Works</h1>
+
+<% @works.each do |work| %>
+  <p><%= work.title %></p>
+  <p><%= work.available_for_purchase %></p>
+<% end %>

@@ -1,6 +1,6 @@
 class ArtistController < ApplicationController
   def index
-    # @artists = Artist.all
+    @artists = Artist.all
   end
 end
 # integration tests for controllers
