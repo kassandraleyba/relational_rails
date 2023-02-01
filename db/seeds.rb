@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Artist.destroy_all
+# Work.destroy_all
+
 Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false)
 Artist.create(name: 'Elliott Erwitt', city: 'Paris', alive_today: true)
 Artist.create(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false)
