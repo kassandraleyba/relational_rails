@@ -1,5 +1,7 @@
 <h1>Artists</h1>
 
 <% @artists.each do |artist|%>
-  <p><%= artist.name %></p>
+  <h3>Artist: <%= artist.name %></h3>
+  <p>City From: <%= artist.city %></p>
+  <p>Alive Today: <%= artist.alive_today %></p>
 <% end %>
