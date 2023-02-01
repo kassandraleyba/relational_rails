@@ -1,6 +1,5 @@
 <h1>Artist Works</h1>
 
 <% @works.each do |work| %>
-  <p><%= work.title %></p>
-  <p><%= work.available_for_purchase %></p>
+  <h3>Title: <%= work.title %></h3>
 <% end %>
