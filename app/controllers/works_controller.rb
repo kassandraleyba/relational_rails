@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
   def index
-    # @songs = Song.all
+    @songs = Song.all
   end
 end
