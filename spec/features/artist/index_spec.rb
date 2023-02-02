@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'the artists page' do
-describe "Parent Index" do
+RSpec.describe 'Artist Page' do
+describe "Artist Index" do
   let!(:artist_1) { Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false, created_at: Time.now - 1.hour) }
   let!(:artist_2) { Artist.create(name: 'Elliott Erwitt', city: 'Paris', alive_today: true, created_at: Time.now - 2.hour) }
   let!(:artist_3) { Artist.create(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false) }
@@ -13,8 +13,8 @@ describe "Parent Index" do
   # When I visit '/parents'
   # Then I see the name of each parent record in the system
     describe "As a visitor" do
-      describe "When I visit '/parents'" do
-        it 'Then I see the name of each parent record in the system' do
+      describe "When I visit '/artists'" do
+        it 'Then I see the name of each artist record in the system' do
           visit "/artists"
       
           expect(page).to have_content(artist_1.name)
