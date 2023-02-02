@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Artist.destroy_all
-# Work.destroy_all
+Work.destroy_all
+Artist.destroy_all
 
-Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false)
-Artist.create(name: 'Elliott Erwitt', city: 'Paris', alive_today: true)
-Artist.create(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false)
+artist_1 = Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false, created_at: Time.now - 1.hour)
+artist_2 = Artist.create(name: 'Elliott Erwitt', city: 'Paris', alive_today: true, created_at: Time.now - 2.hour)
+artist_3 = Artist.create(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false)
 
-Work.create(title: 'Glass Tears', available_for_purchase: false, artist_id: 1)
-Work.create(title: 'Violon dIngres', available_for_purchase: false, artist_id: 1)
+work_1 = Work.create(title: 'Glass Tears', available_for_purchase: false, artist_id: artist_1.id)
+work_2 = Work.create(title: 'Violon dIngres', available_for_purchase: false, artist_id: artist_1.id)
 
-Work.create(title: 'California Kiss', available_for_purchase: false, artist_id: 2)
-Work.create(title: 'Alabama Southern Charm', available_for_purchase: true, artist_id: 2)
+work_3 = Work.create(title: 'California Kiss', available_for_purchase: false, artist_id: artist_2.id)
+work_4 = Work.create(title: 'Alabama Southern Charm', available_for_purchase: true, artist_id: artist_2.id)
 
-Work.create(title: 'Behind the Gare Saint-Lazare', available_for_purchase: false, artist_id: 3)
-Work.create(title: 'Rue Mouffetard', available_for_purchase: true, artist_id: 3)
+work_5 = Work.create(title: 'Behind the Gare Saint-Lazare', available_for_purchase: false, artist_id: artist_3.id)
+work_6 = Work.create(title: 'Rue Mouffetard', available_for_purchase: true, artist_id: artist_3.id)

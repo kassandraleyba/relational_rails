@@ -1,27 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'the works page' do
-  # User Story 3, Child Index 
-
-  # As a visitor
-  # When I visit '/child_table_name'
-  # Then I see each Child in the system including the Child's attributes
-  # (data from each column that is on the child table)
-
-  describe 'As a visitor' do
-    describe 'When I visit /child_table_name' do
-      it 'Then I see each Child in the system including the Childs attributes' do
-        artist_1 = Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false)
-
-        work_1 = Work.create!(title: 'Glass Tears', available_for_purchase: false, artist_id: artist_1.id)
-    
-        visit "/works"
-    
-        expect(page).to have_content(work_1.title)
-      end
-    end
-  end
-
+  let!(:artist_1) { Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false, created_at: Time.now - 1.hour) }
+  let!(:artist_2) { Artist.create(name: 'Elliott Erwitt', city: 'Paris', alive_today: true, created_at: Time.now - 2.hour) }
+  let!(:artist_3) { Artist.create(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false) }
+  let!(:work_1) { Work.create!(title: 'Glass Tears', available_for_purchase: false, artist_id: artist_1.id) }
+  
   # User Story 4, Child Show 
 
   # As a visitor
