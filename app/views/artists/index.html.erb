@@ -1,7 +1,7 @@
 <h1>Artists</h1>
 
 <% @artists.each do |artist|%>
-  <h3><%= artist.name %></h3>
+  <h3><%= artist.name %> Created At: <%= artist.created_at %> </h3>
   <p>City From: <%= artist.city %></p>
   <p>Alive Today: <%= artist.alive_today %></p>
 <% end %>
