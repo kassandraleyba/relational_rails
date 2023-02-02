@@ -64,4 +64,25 @@ RSpec.describe 'the artists page' do
       end
     end
   end
+
+  # User Story 6, Parent Index sorted by Most Recently Created 
+
+  # As a visitor
+  # When I visit the parent index,
+  # I see that records are ordered by most recently created first
+  # And next to each of the records I see when it was created
+
+  describe 'As a visitor' do
+    describe 'When I visit the parent index' do
+      it 'I see that records are ordered by most recently created first' do
+        artist_1 = Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false)
+        artist_2 = Artist.create(name: 'Elliott Erwitt', city: 'Paris', alive_today: true)
+        artist_3 = Artist.create(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false)
+       
+        visit "/artists"
+    
+        expect(page).to have_content([artist_1, artist_2, artist_3])
+      end
+    end
+  end
 end

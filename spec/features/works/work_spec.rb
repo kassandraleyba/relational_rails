@@ -18,6 +18,7 @@ RSpec.describe 'the works page' do
         visit "/works"
     
         expect(page).to have_content(work_1.title)
+        expect(page).to have_content(work_1.available_for_purchase)
       end
     end
   end
