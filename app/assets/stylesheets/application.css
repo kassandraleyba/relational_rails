@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+.front-page {
+  text-align: center;
+  color: #2a2a2b;
+  background-color: white;
+  /* padding: 20px; */
+}
+
+body {
+  font-family: Sans-serif;
+}
+
+a {
+  background-color: #35785e; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+li {
+  text-decoration: none;
+  font-family: Sans-serif;
+  list-style: none;
+}
+.photo {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 500px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+} 
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.artist-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

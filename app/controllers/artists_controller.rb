@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
   def index
-    @artists = Artist.order(created_at: :desc)
-    # require 'pry'; binding.pry
+    @artists = Artist.sort
+    # @artists = Artist.order(created_at: :desc)
   end
 
   def show
