@@ -24,5 +24,25 @@ RSpec.describe 'Artist Page' do
         end
       end
     end
+
+    # User Story 7, Parent Child Count
+
+    # As a visitor
+    # When I visit a parent's show page
+    # I see a count of the number of children associated with this parent
+    # end
+
+    describe 'As a visitor' do
+      describe 'When I visit an artist show page' do
+        it 'I see a count of the number of works associated with this artist' do
+          visit "/artists/#{artist_1.id}"
+      
+          expect(page).to have_content(artist_1.name)
+          expect(page).to have_content(artist_1.work_count)
+          expect(artist_1.work_count).to eq(2)
+        end
+      end
+    end
   end
 end
+

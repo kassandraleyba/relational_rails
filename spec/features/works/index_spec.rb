@@ -46,5 +46,4 @@ RSpec.describe 'Artists Works Page' do
         end
       end
     end
-  end
 end
