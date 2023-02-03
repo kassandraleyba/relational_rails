@@ -1,3 +1,6 @@
-<h1><%= @artist.name %></h1>
-<h3><%= @artist.city %></h3>
-<h3><%= @artist.alive_today %></h3>
+<body>
+  <h1><%= @artist.name %></h1>
+  <h3>From: <%= @artist.city %></h3>
+  <h3>Dead or Alive?: <%= @artist.alive_today %></h3>
+  <p>Number of Works: <%= @artist.work_count %></p>
+</body>
