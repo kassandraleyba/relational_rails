@@ -46,4 +46,25 @@ RSpec.describe 'Artists Works Page' do
         end
       end
     end
+
+    # User Story 8, Child Index Link
+
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+
+    describe 'As a visitor' do
+      describe 'When I visit any page on the site' do
+        it 'Then I see a link at the top of the page that takes me to the Work Index' do
+          visit "/artists"
+          # visit can be ANY page
+
+          click_link('List of All Works')
+          #after click_link - ALWAYS visit /works
+          
+          expect(current_path).to eq('/works')
+        end
+      end
+    end
+  end
 end
