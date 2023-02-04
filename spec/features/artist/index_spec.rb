@@ -40,9 +40,28 @@ RSpec.describe 'Artist Page' do
         expect(page).to have_content(artist_2.name)
         expect(artist_3.name).to appear_before(artist_1.name)
         expect(artist_1.name).to appear_before(artist_2.name)
-        # expect(page).to have_content(artist_1.created_at)
-        # expect(page).to have_content(artist_2.created_at)
-        # expect(page).to have_content(artist_3.created_at)
+        expect(page).to have_content(artist_1.created_at)
+        expect(page).to have_content(artist_2.created_at)
+        expect(page).to have_content(artist_3.created_at)
+      end
+    end
+
+    # User Story 9, Parent Index Link
+
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Parent Index
+
+    describe "As a visitor" do
+      describe "When I visit any page on the site" do
+        it 'Then I see a link at the top of the page that takes me to the Parent Index' do
+          visit "/works"
+      
+          click_link('Artists Works')
+          #after click_link - ALWAYS visit /works
+          
+          expect(current_path).to eq('/artists')
+        end
       end
     end
   end
