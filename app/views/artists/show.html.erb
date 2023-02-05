@@ -1,6 +1,7 @@
-<%= link_to "specific artist page", "/artists/#{@artist.id}/works" %>
-
 <body>
+  <%= link_to "specific artist page", "/artists/#{@artist.id}/works" %>
+  <%= link_to "Welcome Page", "/" %>
+
   <h1><%= @artist.name %></h1>
   <h3>From: <%= @artist.city %></h3>
   <h3>Dead or Alive?: <%= @artist.alive_today %></h3>
