@@ -57,10 +57,10 @@ RSpec.describe 'Artist Page' do
         it 'Then I see a link at the top of the page that takes me to the Parent Index' do
           visit "/works"
       
-          click_link('Artists Works')
+          click_link('Photographs')
           #after click_link - ALWAYS visit /works
           
-          expect(current_path).to eq('/artists')
+          expect(current_path).to eq('/works')
         end
       end
     end

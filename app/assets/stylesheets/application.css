@@ -24,6 +24,8 @@
 
 body {
   font-family: Robot Mono;
+  padding: 20px;
+  color: #2a2a2b;
 }
 
 a {
@@ -39,7 +41,7 @@ a {
  
   width: 197px;
   height: 20px;
-  font-family: 'Inter';
+  font-family: Robot Mono;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -50,13 +52,18 @@ a {
   box-sizing: border-box;
   width: 168px;
   height: 55px;
-  background: #3277FC;
-  border: 1px solid #D9D9D9;
-  box-shadow: 0px 4px 3px 1px rgba(0, 0, 0, 0.6);
-  border-radius: 16px;
+  /* background: #3277FC; */
+  background: #0b8795;
+  /* border: 1px solid #D9D9D9; */
+  /* box-shadow: 0px 4px 3px 1px rgba(0, 0, 0, 0.6); */
+  /* border-radius: 16px; */
   text-decoration: none;
   font-family: Robot Mono;
   padding: 15px;
+
+  border: 1px solid #D9D9D9;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 16px;
 }
 
 li {
@@ -87,7 +94,46 @@ img {
 }
 
 .artist-header {
+  padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.right-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  text-align: center;
+}
+
+.artist-main {
+  padding: 20px;
+}
+
+.name-create {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); */
+}
+
+.form {
+  font-family: Robot Mono;
+  font-size: 18px;
+  padding: 30px;
+  margin-top: 20px;
+  color: #2a2a2b;
+  display: flex;
+  flex-direction: column;
+
+
+width: 233px;
+height: 152px;
+
+background: #EA9A6D;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+color: white;
 }

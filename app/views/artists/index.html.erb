@@ -1,10 +1,24 @@
-<div class="artist-header">
-  <h1>Artists</h1>
-  <a href="/works">Reverse</a> 
-</div>
+<body>
+  <div class="right-button">
+    <%= link_to "Welcome Page", "/" %>
+    <%= link_to "New Artist", "/artists/new" %>
+  </div>
 
-<% @artists.each do |artist|%>
-  <h3><%= artist.name %> Created At: <%= artist.created_at %> </h3>
-  <p>City From: <%= artist.city %></p>
-  <p>Alive Today: <%= artist.alive_today %></p>
-<% end %>
+  <div class="artist-header">
+    <h1>Artists</h1>
+  </div>
+
+  <div class="artist-main">
+    <% @artists.each do |artist|%>
+
+      <div class="name-create">
+        <h3><%= artist.name %></h3>
+        <p>Created At: <%= artist.created_at %></p>
+      </div>
+
+      <p>Born In: <%= artist.city %></p>
+      <p>Alive Today: <%= artist.alive_today %></p>
+    <% end %>
+  </div>
+
+</body>

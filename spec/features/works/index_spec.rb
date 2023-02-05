@@ -59,7 +59,7 @@ RSpec.describe 'Artists Works Page' do
           visit "/artists"
           # visit can be ANY page
 
-          click_link('List of All Works')
+          click_link('All Photographs')
           #after click_link - ALWAYS visit /works
           
           expect(current_path).to eq('/works')

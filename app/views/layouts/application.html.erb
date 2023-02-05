@@ -12,8 +12,10 @@
   </head>
 
   <body>
-    <%= link_to "List of All Works", "/works" %>
-    <%= link_to "Artists Works", "/artists" %>
+    <div class="main-buttons">
+      <%= link_to "All Photographs", "/works" %>
+      <%= link_to "Artists", "/artists" %>  
+    </div>
     <%= yield %>
   </body>
 </html>

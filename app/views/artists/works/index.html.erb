@@ -1,6 +1,10 @@
-<h1>Artists' Works</h1>
+<body>
+  <%= link_to "Welcome Page", "/" %>
 
-<% @works.each do |work| %>
-  <h3>Title: <%= work.title %></h3>
-  <p>Available For Purchase: <%= work.available_for_purchase%>
-<% end %>
+  <h1>Artists' Works</h1>
+
+  <% @works.each do |work| %>
+    <h3>Title: <%= work.title %></h3>
+    <p>Available For Purchase: <%= work.available_for_purchase%>
+  <% end %>
+</body>
