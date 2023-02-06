@@ -142,12 +142,12 @@ img {
   color: white;
 }
 
-.specific-artist {
+/* .specific-artist {
   display: flex;
   flex-direction: row;
   justify-content: right;
   text-align: center;
-}
+} */
 
 .create-button {
   background-color: rgb(113, 179, 123);

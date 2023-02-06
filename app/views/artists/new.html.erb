@@ -1,17 +1,15 @@
-<body>
-  <div class="form">
-    <%= form_with url: '/artists', method: :post, local: true do |form| %>
+<div class="form">
+  <%= form_with url: '/artists', method: :post, local: true do |form| %>
 
-      <%= form.label :name, "Name:" %>
-      <%= form.text_field :name%>
-      <br><br>
-      <%= form.label :city, "City:" %>
-      <%= form.text_field :city%>
-      <br><br>
-      <%= form.label :alive_today, "Alive Today?:" %>
-      <%= form.check_box :alive_today%>
-      <br><br>
-      <%= form.submit "Create Artist", :class => "create-button"%>
-    <% end %>
-  </div>
-</body>
+    <%= form.label :name, "Name:" %>
+    <%= form.text_field :name%>
+    <br><br>
+    <%= form.label :city, "City:" %>
+    <%= form.text_field :city%>
+    <br><br>
+    <%= form.label :alive_today, "Alive Today?:" %>
+    <%= form.check_box :alive_today%>
+    <br><br>
+    <%= form.submit "Create Artist", :class => "create-button"%>
+  <% end %>
+</div>
