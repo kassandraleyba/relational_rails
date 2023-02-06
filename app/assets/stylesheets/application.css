@@ -44,14 +44,14 @@ a {
   font-family: Robot Mono;
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 24px;
   color: #FFFFFF;
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 
   box-sizing: border-box;
-  width: 168px;
-  height: 55px;
+  width: 150px;
+  height: 48px;
   /* background: #3277FC; */
   background: #0b8795;
   /* border: 1px solid #D9D9D9; */
@@ -63,7 +63,11 @@ a {
 
   border: 1px solid #D9D9D9;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
-  border-radius: 16px;
+  border-radius: 8px;
+}
+
+.main-buttons {
+  margin-bottom: 20px;
 }
 
 li {
@@ -104,19 +108,20 @@ img {
 .right-button {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-start;
   text-align: center;
 }
 
 .artist-main {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .name-create {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); */
 }
 
 .form {
@@ -128,12 +133,42 @@ img {
   display: flex;
   flex-direction: column;
 
+  width: 233px;
+  height: 152px;
 
-width: 233px;
-height: 152px;
+  background: #EA9A6D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  color: white;
+}
 
-background: #EA9A6D;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 8px;
-color: white;
+.specific-artist {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  text-align: center;
+}
+
+.create-button {
+  background-color: rgb(113, 179, 123);
+  border-radius: 8px;
+  color: white;
+}
+
+.edit-form {
+  font-family: Robot Mono;
+  font-size: 18px;
+  padding: 30px;
+  margin-top: 20px;
+  color: #2a2a2b;
+  display: flex;
+  flex-direction: column;
+
+  width: 233px;
+  height: 152px;
+
+  background: #EA9A6D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  color: white;
 }
