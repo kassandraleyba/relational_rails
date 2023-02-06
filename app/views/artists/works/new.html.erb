@@ -1,0 +1,11 @@
+<body>
+  <div class="form">
+    <%= form_with url: "/artists/#{@artist.id}/works", method: :post, local: true do |form| %>
+
+      <%= form.label :title, "Title:" %>
+      <%= form.text_field :title %>
+      <br><br>
+      <%= form.submit "Create Works", :class => "create-button"%>
+    <% end %>
+  </div>
+</body>

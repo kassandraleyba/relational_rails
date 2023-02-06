@@ -35,7 +35,6 @@ RSpec.describe 'Artist Page' do
           visit "/artists/#{artist_1.id}"
         
           click_link('specific artist')
-          #after click_link - ALWAYS visit /works
           
           expect(current_path).to eq("/artists/#{artist_1.id}/works")
         end

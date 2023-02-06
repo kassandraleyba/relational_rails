@@ -9,12 +9,12 @@ RSpec.describe 'Artists Works Page' do
     let!(:work_1) { Work.create!(title: 'Glass Tears', available_for_purchase: false, artist_id: artist_1.id) }
     let!(:work_2) { Work.create(title: 'Violon dIngres', available_for_purchase: false, artist_id: artist_1.id) }
     
-  # User Story 3, Child Index 
+    # User Story 3, Child Index 
 
-  # As a visitor
-  # When I visit '/child_table_name'
-  # Then I see each Child in the system including the Child's attributes
-  # (data from each column that is on the child table)
+    # As a visitor
+    # When I visit '/child_table_name'
+    # Then I see each Child in the system including the Child's attributes
+    # (data from each column that is on the child table)
 
     describe 'As a visitor' do
       describe 'When I visit /works' do
@@ -56,11 +56,9 @@ RSpec.describe 'Artists Works Page' do
     describe 'As a visitor' do
       describe 'When I visit any page on the site' do
         it 'Then I see a link at the top of the page that takes me to the Work Index' do
-          visit "/artists"
-          # visit can be ANY page
+          visit "/works"
 
           click_link('All Photographs')
-          #after click_link - ALWAYS visit /works
           
           expect(current_path).to eq('/works')
         end
