@@ -1,0 +1,12 @@
+<div class="edit-form">
+  <%= form_with url: "/works/#{@work.id}", method: :patch, local: true do |form| %>
+
+    <%= form.label :title, "Title:" %>
+    <%= form.text_field :title %> 
+    <br><br>
+    <%= form.label :available_for_purchase, "Available For Purchase:" %>
+    <%= form.check_box :available_for_purchase %> 
+    <br><br>
+    <%= form.submit "Update Photograph", :class => "create-button" %>
+  <% end %>
+</div>

@@ -1,13 +1,16 @@
-<body>
-  <div class="right-button">
-    <%= link_to "Welcome Page", "/" %>
-    <%= link_to "New Works", "/artists/#{@artist.id}/works/new" %>
-  </div>
+<div class="right-button">
+  <%= link_to "Welcome Page", "/" %>
+  <%= link_to "New Works", "/artists/#{@artist.id}/works/new" %>
+</div>
 
-  <h1>Artists' Works</h1>
+<div class="artist-header">
+  <h1><%= "#{@artist.name}" %>'s Photos</h1>
+</div>
 
+<div class="artist-main">
   <% @works.each do |work| %>
     <h3>Title: <%= work.title %></h3>
     <p>Available For Purchase: <%= work.available_for_purchase%>
   <% end %>
-</body>
+</div>
+

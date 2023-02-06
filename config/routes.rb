@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/works', to: 'works#index'
   get '/works/:id', to: 'works#show'
+  get '/works/:id/edit', to: 'works#edit'
+  patch 'works/:id', to: 'works#update'
 
   get 'artists/:id/works', to: 'artists/works#index'
   get 'artists/:id/works/new', to: 'artists/works#new'

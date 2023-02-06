@@ -1,17 +1,15 @@
-<body>
-  <div class="right-button"> 
-    <%= link_to "Welcome Page", "/" %>
-  </div>
+<div class="right-button"> 
+  <%= link_to "Welcome Page", "/" %>
+</div>
 
- <div class="artist-header">
-     <h1>All Photographs</h1>
-  </div>
- 
-  <div class="artist-main">
-    <% @works.each do |work| %>
-      <h3>Title: <%= work.title %></h3>
-      <p>Available For Purchase: <%= work.available_for_purchase %></p>
-      
-    <% end %>
-  </div>
-</body>
+<div class="artist-header">
+    <h1>All Photographs</h1>
+</div>
+
+<div class="artist-main">
+  <% @works.each do |work| %>
+    <h3>Title: <%= work.title %></h3>
+    <p>Available For Purchase: <%= work.available_for_purchase %></p>
+  <%= button_to "Edit #{work.title}", "/works/#{work.id}/edit", method: :get, :class => "edit-button" %>
+  <% end %>
+</div>
