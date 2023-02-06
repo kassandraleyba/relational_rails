@@ -1,7 +1,6 @@
 class ArtistsController < ApplicationController
   def index
     @artists = Artist.sort
-    # @artists = Artist.order(created_at: :desc)
   end
   
   def show
@@ -9,7 +8,6 @@ class ArtistsController < ApplicationController
   end
   
   def new
-
   end
 
   def create
@@ -17,10 +15,37 @@ class ArtistsController < ApplicationController
     redirect_to "/artists"
   end
 
+  def edit
+    @artist = Artist.find(params[:id])
+  end
+
+  def update
+    @artist = Artist.find(params[:id])
+
+    @artist.update(artist_params)
+    redirect_to '/artists'
+  end
+
+  private
   def artist_params
     params.permit(:name, :city, :alive_today)
-    # params for the artist form
-    # helper method
   end
+
 end
+
+
+# def update
+#   @artists = Artist.find(params[:id])
+#   # require 'pry'; binding.pry
+#   @artists.update({
+#     # require 'pry'; binding.pry
+#     name: params[:artists][:name],
+#     city: params[:artists][:city],
+#     alive_today: params[:artists][:alive_today],
+#     })
+#   @artist.save
+#   redirect_to "/artists/#{artist.id}"
+# end
+
+
 # integration tests for controllers
