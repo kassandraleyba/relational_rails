@@ -5,13 +5,10 @@ Rails.application.routes.draw do
   get '/artists', to: 'artists#index'
   get 'artists/new', to: 'artists#new'
   post 'artists', to: 'artists#create'
-
-  # post 'artists/:id/edit', to: 'artists#update'
   
   get '/artists/:id', to: 'artists#show'
   get 'artists/:id/edit', to: 'artists#edit'
-
-
+  patch 'artists/:id', to: 'artists#update'
 
   get '/works', to: 'works#index'
   get '/works/:id', to: 'works#show'

@@ -30,12 +30,30 @@ RSpec.describe 'Artist Page' do
               visit "/artists"
               
               click_button("Edit #{artist_1.name}")
+              # click_button("Edit")
               
               expect(current_path).to eq("/artists/#{artist_1.id}/edit")
             end
           end
         end
       end
+    end
+
+    it 'can edit the artist' do
+      artist_4 = Artist.create!(name: 'Ansel Adams', city: 'San Fransisco', alive_today: false, created_at: Time.now + 1.hour)
+  
+      visit "/artists"
+  
+      expect(page).to have_content("Ansel Adam")
+  
+      click_button "Edit Ansel Adam"
+      # click_button "Edit"
+  
+      fill_in "Name", with: "Ansel Adams"
+      click_button "Update Artist"
+  
+      expect(current_path).to eq("/artists")
+      expect(page).to have_content("Ansel Adams")
     end
   end
 end

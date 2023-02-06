@@ -12,12 +12,11 @@
     <% @artists.each do |artist|%>
 
       <div class="name-create">
-        <div class="edit-button">
           <h3><%= artist.name %></h3>
-          <%= button_to "Edit #{artist.name}", "/artists/#{artist.id}/edit", method: :get %>
-        </div>
         <p>Created At: <%= artist.created_at %></p>
       </div>
+      <%= button_to "Edit #{artist.name}", "/artists/#{artist.id}/edit", method: :get, :class => "edit-button" %>
+                    <%# #{artist.name} %>
 
       <%# <p>Born In: <%= artist.city</p>  %>
       <%# <p>Alive Today: <%= artist.alive_today</p>  %>
