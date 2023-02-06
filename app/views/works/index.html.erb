@@ -10,6 +10,6 @@
   <% @works.each do |work| %>
     <h3>Title: <%= work.title %></h3>
     <p>Available For Purchase: <%= work.available_for_purchase %></p>
-    
+  <%= button_to "Edit #{work.title}", "/works/#{work.id}/edit", method: :get, :class => "edit-button" %>
   <% end %>
 </div>
