@@ -6,6 +6,7 @@ RSpec.describe 'Artist Page' do
     let!(:artist_2) { Artist.create!(name: 'Elliott Erwitt', city: 'Paris', alive_today: true, created_at: Time.now - 2.hour) }
     let!(:artist_3) { Artist.create!(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false) }
     let!(:work_1) { Work.create!(title: 'Glass Tears', available_for_purchase: false, artist_id: artist_1.id) }
+    let!(:work_2) { Work.create(title: 'Violon dIngres', available_for_purchase: false, artist_id: artist_1.id) }
 
     # User Story 5, Parent Children Index 
     # As a visitor
@@ -37,6 +38,31 @@ RSpec.describe 'Artist Page' do
           click_link("#{artist_1.name}'s Photos")
           
           expect(current_path).to eq("/artists/#{artist_1.id}/works")
+        end
+      end
+    end
+
+    # User Story 16, Sort Parent's Children in Alphabetical Order by name 
+
+    # As a visitor
+    # When I visit the Parent's children Index Page
+    # Then I see a link to sort children in alphabetical order
+    # When I click on the link
+    # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+
+    describe 'As a visitor' do
+      describe 'When I visit the Artists works Index Page' do
+        describe 'Then I see a link to sort works in alphabetical order' do
+          describe 'When I click on the link' do
+            it 'Im taken back to the Artists works Index Page where I see all of the artist work in alphabetical order' do
+              visit "/artists/#{artist_1.id}/works"
+            
+              click_link("Sort Alphabetically")
+              
+              expect(current_path).to eq("/artists/#{artist_1.id}/works")
+              expect(work_1.title).to appear_before(work_2.title)
+            end
+          end
         end
       end
     end
