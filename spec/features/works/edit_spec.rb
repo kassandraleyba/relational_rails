@@ -26,10 +26,9 @@ RSpec.describe 'Works Page' do
         describe 'Then I see a link to update that Work "Update Work"' do
           describe 'When I click the link' do
             it 'I am taken to /works/:id/edit where I see a form to edit the works attributes:' do
-              visit "/works"
+              visit "/works/#{work_1.id}"
               
               click_button("Edit #{work_1.title}")
-              # click_button("Edit")
               
               expect(current_path).to eq("/works/#{work_1.id}/edit")
             end
@@ -42,18 +41,17 @@ RSpec.describe 'Works Page' do
       describe 'Then a `PATCH` request is sent to /works/:id,' do
         describe 'the works data is updated,' do
           it 'and I am redirected to the Work Show page where I see the Works updated information' do
-            visit "/works"
+            visit "/works/#{work_1.id}"
         
             expect(page).to have_content("Glass Tear")
         
             click_button "Edit Glass Tear"
-            # click_button "Edit"
         
             fill_in "Title", with: "Glass Tears"
             find('#available_for_purchase').click
             click_button "Update Photograph"
         
-            expect(current_path).to eq("/works")
+            expect(current_path).to eq("/works/#{work_1.id}")
             expect(page).to have_content("Glass Tears")
           end
         end

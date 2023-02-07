@@ -102,16 +102,9 @@ RSpec.describe 'Artists Works Page' do
             it 'I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 14' do
               visit "/works"
           
-              expect(page).to have_content("Glass Tear")
+              click_button("Edit #{work_1.title}")
           
-              click_button "Edit Glass Tear"
-          
-              fill_in "Title", with: "Glass Tears"
-              find('#available_for_purchase').click
-              click_button "Update Photograph"
-          
-              expect(current_path).to eq("/works")
-              expect(page).to have_content("Glass Tears")
+              expect(current_path).to eq("/works/#{work_1.id}/edit")
             end
           end
         end

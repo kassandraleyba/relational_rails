@@ -3,19 +3,21 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   get '/artists', to: 'artists#index'
-  get 'artists/new', to: 'artists#new'
-  post 'artists', to: 'artists#create'
+  get '/artists/new', to: 'artists#new'
+  post '/artists', to: 'artists#create'
   
   get '/artists/:id', to: 'artists#show'
-  get 'artists/:id/edit', to: 'artists#edit'
-  patch 'artists/:id', to: 'artists#update'
+  get '/artists/:id/edit', to: 'artists#edit'
+  patch '/artists/:id', to: 'artists#update'
+  delete '/artists/:id', to: 'artists#destroy'
 
   get '/works', to: 'works#index'
   get '/works/:id', to: 'works#show'
   get '/works/:id/edit', to: 'works#edit'
-  patch 'works/:id', to: 'works#update'
+  patch '/works/:id', to: 'works#update'
+  delete '/works/:id', to: 'works#destroy'
 
-  get 'artists/:id/works', to: 'artists/works#index'
-  get 'artists/:id/works/new', to: 'artists/works#new'
-  post 'artists/:id/works', to: 'artists/works#create'
+  get '/artists/:id/works', to: 'artists/works#index'
+  get '/artists/:id/works/new', to: 'artists/works#new'
+  post '/artists/:id/works', to: 'artists/works#create'
 end
