@@ -6,7 +6,7 @@ RSpec.describe 'Artists Works Page' do
     let!(:artist_1) { Artist.create(name: 'Man Ray', city: 'Philadelphia', alive_today: false, created_at: Time.now - 1.hour) }
     let!(:artist_2) { Artist.create(name: 'Elliott Erwitt', city: 'Paris', alive_today: true, created_at: Time.now - 2.hour) }
     let!(:artist_3) { Artist.create(name: 'Henri Cartier Bresson', city: 'Chanteloup-en-Brie', alive_today: false) }
-    let!(:work_1) { Work.create!(title: 'Glass Tears', available_for_purchase: false, artist_id: artist_1.id) }
+    let!(:work_1) { Work.create!(title: 'Glass Tears', available_for_purchase: true, artist_id: artist_1.id) }
     let!(:work_2) { Work.create(title: 'Violon dIngres', available_for_purchase: false, artist_id: artist_1.id) }
     
     # User Story 3, Child Index 
@@ -61,6 +61,28 @@ RSpec.describe 'Artists Works Page' do
           click_link('All Photographs')
           
           expect(current_path).to eq('/works')
+        end
+      end
+    end
+
+    # User Story 15, Child Index only shows `true` Records 
+
+    # As a visitor
+    # When I visit the child index
+    # Then I only see records where the boolean column is `true`
+
+    describe 'As a visitor' do
+      describe 'When I visit the child index' do
+        it 'Then I only see records where the boolean column is `true`' do
+
+          visit "/works" #?sort=purchase_true"
+          # address bar, grabbing key value pairs
+  
+          click_link("Only True")
+
+          expect(current_path).to eq('/works')
+          expect(page).to have_content('Glass Tears')
+          expect(page).to_not have_content('Violon dIngres')
         end
       end
     end

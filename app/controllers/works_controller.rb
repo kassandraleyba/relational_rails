@@ -1,6 +1,10 @@
 class WorksController < ApplicationController
   def index
-    @works = Work.all
+    if params[:sort] == "available_for_purchase"
+      @works = Work.purchase_true
+    else
+      @works = Work.all
+    end
   end
 
   def show
