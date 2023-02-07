@@ -1,6 +1,5 @@
 class Artists::WorksController < ApplicationController
   def index
-    # require 'pry'; binding.pry
     @artist = Artist.find(params[:id])
 
     if params[:sort] == "title"

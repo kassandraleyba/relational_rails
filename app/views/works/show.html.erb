@@ -1,4 +1,8 @@
-<%= link_to "Welcome Page", "/" %>
+<div class="right-button"> 
+  <%= link_to "Welcome Page", "/" %>
+</div>
+
 <h1><%= @work.title %></h1>
 <h3><%= @work.available_for_purchase %></h3>
+<%= button_to "Edit #{@work.title}", "/works/#{@work.id}/edit", method: :get, :class => "edit-button" %>
 

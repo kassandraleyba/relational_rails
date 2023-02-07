@@ -22,6 +22,7 @@ Things you may want to cover:
 * How to run the test suite
 
     bundle install - installs all gems to the system that are listed in Gemfile as well as their dependencies
+    run rails db:{drop,create,migrate,seed}
     rspec - runs all tests for BDD
     rails s - starts the server for development testing
 

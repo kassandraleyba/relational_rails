@@ -27,7 +27,7 @@ RSpec.describe 'Artist Page' do
         describe 'Then I see a link to update the artist "Update Artist"' do
           describe 'Then I am taken to /artists/:id/edit where I  see a form to edit the artists attributes:' do
             it 'and I am redirected to the Artists Show page where I see the artists updated info' do
-              visit "/artists"
+              visit "/artists/#{artist_1.id}"
               
               click_button("Edit #{artist_1.name}")
               # click_button("Edit")
@@ -39,21 +39,28 @@ RSpec.describe 'Artist Page' do
       end
     end
 
-    it 'can edit the artist' do
-      artist_4 = Artist.create!(name: 'Ansel Adams', city: 'San Fransisco', alive_today: false, created_at: Time.now + 1.hour)
-  
-      visit "/artists"
-  
-      expect(page).to have_content("Ansel Adam")
-  
-      click_button "Edit Ansel Adam"
-      # click_button "Edit"
-  
-      fill_in "Name", with: "Ansel Adams"
-      click_button "Update Artist"
-  
-      expect(current_path).to eq("/artists")
-      expect(page).to have_content("Ansel Adams")
+    describe 'As a visitor' do
+      describe 'When I visit a artist show page' do
+        describe 'Then I see a link to update the artist "Update Artist"' do
+          describe 'Then I am taken to /artists/:id/edit where I  see a form to edit the artists attributes:' do
+            it 'can edit the artist' do
+              artist_4 = Artist.create!(name: 'Ansel Adams', city: 'San Fransisco', alive_today: false, created_at: Time.now + 1.hour)
+          
+              visit "/artists/#{artist_4.id}"
+          
+              expect(page).to have_content("Ansel Adam")
+          
+              click_button "Edit Ansel Adam"
+          
+              fill_in "Name", with: "Ansel Adams"
+              click_button "Update Artist"
+          
+              expect(current_path).to eq("/artists/#{artist_4.id}")
+              expect(page).to have_content("Ansel Adams")
+            end
+          end
+        end
+      end
     end
   end
 end
