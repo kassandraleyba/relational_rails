@@ -86,5 +86,36 @@ RSpec.describe 'Artists Works Page' do
         end
       end
     end
+
+    # User Story 18, Child Update From Childs Index Page 
+
+    # As a visitor
+    # When I visit the `child_table_name` index page or a parent `child_table_name` index page
+    # Next to every child, I see a link to edit that child's info
+    # When I click the link
+    # I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 14
+
+    describe 'As a visitor' do
+      describe 'When I visit the `child_table_name` index page or a parent `child_table_name` index page' do
+        describe 'Next to every child, I see a link to edit that childs info' do
+          describe 'When I click the link' do
+            it 'I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 14' do
+              visit "/works"
+          
+              expect(page).to have_content("Glass Tear")
+          
+              click_button "Edit Glass Tear"
+          
+              fill_in "Title", with: "Glass Tears"
+              find('#available_for_purchase').click
+              click_button "Update Photograph"
+          
+              expect(current_path).to eq("/works")
+              expect(page).to have_content("Glass Tears")
+            end
+          end
+        end
+      end
+    end
   end
 end
