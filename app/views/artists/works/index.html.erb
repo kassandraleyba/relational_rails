@@ -12,6 +12,7 @@
   <% @works.each do |work| %>
     <h3>Title: <%= work.title %></h3>
     <p>Available For Purchase: <%= work.available_for_purchase%>
+    <%= button_to "Delete #{work.title}", "/works/#{work.id}", method: :delete, :class => "edit-button" %>
   <% end %>
 </div>
 

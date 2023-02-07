@@ -39,5 +39,30 @@ RSpec.describe 'Work Page' do
         end
       end
     end
+
+    # User Story 23, Child Delete From Childs Index Page 
+
+    # As a visitor
+    # When I visit the `child_table_name` index page or a parent `child_table_name` index page
+    # Next to every child, I see a link to delete that child
+    # When I click the link
+    # I should be taken to the `child_table_name` index page where I no longer see that child
+
+    describe 'As a visitor' do
+      describe 'When I visit the `child_table_name` index page or a parent `child_table_name` index page' do
+        describe 'Next to every child, I see a link to delete that child' do
+          describe 'When I click the link' do
+            it 'I should be taken to the `child_table_name` index page where I no longer see that child' do
+              visit "/works"
+              
+              click_button "Delete #{work_1.title}"
+              
+              expect(current_path).to eq("/works")
+              expect(page).to_not have_content('Glass Tears')
+            end
+          end
+        end
+      end
+    end
   end
 end
