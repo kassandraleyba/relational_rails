@@ -39,5 +39,31 @@ RSpec.describe 'Artist Page' do
         end
       end
     end
+
+    # User Story 22, Parent Delete From Parent Index Page 
+
+    # As a visitor
+    # When I visit the parent index page
+    # Next to every parent, I see a link to delete that parent
+    # When I click the link
+    # I am returned to the Parent Index Page where I no longer see that parent
+
+    describe 'As a visitor' do
+      describe 'When I visit the parent index page' do
+        describe 'Next to every parent, I see a link to delete that parent' do
+          describe 'When I click the link' do
+            it 'I am returned to the Parent Index Page where I no longer see that parent' do
+              artist_4 = Artist.create(name: 'Ansel Adams')
+              visit "/artists"
+              
+              click_button("Delete #{artist_4.name}")
+              
+              expect(current_path).to eq("/artists")
+              expect(page).to_not have_content('Ansel Adams')
+            end
+          end
+        end
+      end
+    end
   end
 end

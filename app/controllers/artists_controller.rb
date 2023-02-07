@@ -27,6 +27,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
+    # require 'pry'; binding.pry
     artist = Artist.find(params[:id])
     artist.destroy
 
