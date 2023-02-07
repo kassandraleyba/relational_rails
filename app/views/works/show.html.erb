@@ -5,4 +5,5 @@
 <h1><%= @work.title %></h1>
 <h3><%= @work.available_for_purchase %></h3>
 <%= button_to "Edit #{@work.title}", "/works/#{@work.id}/edit", method: :get, :class => "edit-button" %>
+<%= button_to "Delete", "/works/#{@work.id}", method: :delete, :class => "edit-button" %>
 

@@ -22,6 +22,13 @@ class WorksController < ApplicationController
     redirect_to "/works/#{work.id}"
   end
 
+  def destroy
+    work = Work.find(params[:id])
+    work.destroy
+
+    redirect_to '/works'
+  end
+
   private
   def works_params
     params.permit(:name, :available_for_purchase)
