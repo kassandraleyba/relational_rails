@@ -64,5 +64,29 @@ RSpec.describe 'Artist Page' do
         end
       end
     end
+
+    # User Story 17, Parent Update From Parent Index Page 
+
+    # As a visitor
+    # When I visit the parent index page
+    # Next to every parent, I see a link to edit that parent's info
+    # When I click the link
+    # I should be taken to that parent's edit page where I can update its information just like in User Story 12
+
+    describe "As a visitor" do
+      describe "When I visit the artist index page" do
+        describe 'Next to every artist, I see a link to edit that artists info' do
+          describe 'When I click the link' do
+            it 'I should be taken to that artists edit page where I can update its information just like in User Story 12' do
+              visit "/artists"
+              
+              click_button("Edit #{artist_1.name}")
+              
+              expect(current_path).to eq("/artists/#{artist_1.id}/edit")
+            end
+          end
+        end
+      end
+    end
   end
 end
