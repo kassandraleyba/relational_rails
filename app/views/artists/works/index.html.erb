@@ -11,8 +11,19 @@
 <div class="artist-main">
   <% @works.each do |work| %>
     <h3>Title: <%= work.title %></h3>
-    <p>Available For Purchase: <%= work.available_for_purchase%>
+    <p>Price: <%= work.price %></p>
+    <p>Available For Purchase: <%= work.available_for_purchase %></p>
     <%= button_to "Delete #{work.title}", "/works/#{work.id}", method: :delete, :class => "edit-button" %>
+  <% end %>
+</div>
+
+<div class="edit-form">
+  <%= form_with url: "/artists/#{@artist.id}/works", method: :get, local: true do |form| %>
+
+    <%= form.label :price, "Price:" %>
+    <%= form.text_field :price %> 
+    <br><br>
+    <%= form.submit "Filter Price", :class => "create-button" %>
   <% end %>
 </div>
 
