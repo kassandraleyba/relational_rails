@@ -10,7 +10,7 @@
 <div class="artist-main">
   <% @works.each do |work| %>
     <h3>Title: <%= work.title %></h3>
-    <%# <p>Price: $<%= work.price</p>  %>
+    <p>Price: $<%= work.price</p> 
     <p>Available For Purchase: <%= work.available_for_purchase %></p> 
     <%= button_to "Edit #{work.title}", "/works/#{work.id}/edit", method: :get, :class => "edit-button" %>
     <%= button_to "Delete #{work.title}", "/works/#{work.id}", method: :delete, :class => "edit-button" %>
