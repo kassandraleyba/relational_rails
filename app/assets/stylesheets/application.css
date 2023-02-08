@@ -37,14 +37,13 @@ a {
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
-  line-height: 24px;
   color: #FFFFFF;
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 
   box-sizing: border-box;
   width: 150px;
-  height: 48px;
-  background: #0b8795;
+  height: auto;
+  background: #18a2b1;
   text-decoration: none;
   font-family: Robot Mono;
   padding: 15px;
@@ -105,7 +104,7 @@ img {
   display: flex;
   flex-direction: column;
 
-  width: 800px;
+  height: auto;
   width: 575px;
 
   background: #EA9A6D;
@@ -139,7 +138,7 @@ img {
 }
 
 .create-button {
-  background-color: rgb(113, 179, 123);
+  background-color: rgb(132, 209, 144);
   border-radius: 6px;
   color: white;
 }
@@ -181,7 +180,7 @@ img {
 }
 
 .edit-button {
-  background-color: rgb(33, 178, 211);
+  background-color: rgb(88, 191, 214);
   border-radius: 6px;
   color: white;
   font-size: 12px;
