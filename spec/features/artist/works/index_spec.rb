@@ -9,10 +9,6 @@ RSpec.describe 'Artist Page' do
     let!(:work_2) { Work.create(title: 'Violon dIngres', price: 1500, available_for_purchase: false, artist_id: artist_1.id) }
 
     # User Story 5, Parent Children Index 
-    # As a visitor
-    # When I visit '/parents/:parent_id/child_table_name'
-    # Then I see each Child that is associated with that Parent with each Child's attributes
-    # (data from each column that is on the child table)
 
     describe 'As a visitor' do
       describe 'When I visit /artists/:id/works' do
@@ -27,9 +23,6 @@ RSpec.describe 'Artist Page' do
 
     # User Story 10, Parent Child Index Link
 
-    # As a visitor
-    # When I visit a parent show page ('/parents/:id')
-    # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
     describe 'As a visitor' do
       describe 'When I visit a artist show page (/artists/:id)' do
         it 'Then I see a link to take me to that artists works page (/artists/:id/works)' do
@@ -43,12 +36,6 @@ RSpec.describe 'Artist Page' do
     end
 
     # User Story 16, Sort Parent's Children in Alphabetical Order by name 
-
-    # As a visitor
-    # When I visit the Parent's children Index Page
-    # Then I see a link to sort children in alphabetical order
-    # When I click on the link
-    # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
 
     describe 'As a visitor' do
       describe 'When I visit the Artists works Index Page' do
@@ -69,11 +56,6 @@ RSpec.describe 'Artist Page' do
 
     # User Story 21, Display Records Over a Given Threshold 
 
-    # As a visitor
-    # When I visit the Parent's children Index Page
-    # I see a form that allows me to input a number value
-    # When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
-    # Then I am brought back to the current index page with only the records that meet that threshold shown.
     describe 'As a visitor' do
       describe 'When I visit the Parents children Index Page' do
         describe 'I see a form that allows me to input a number value' do

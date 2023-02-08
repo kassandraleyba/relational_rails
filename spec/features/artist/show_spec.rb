@@ -10,9 +10,6 @@ RSpec.describe 'Artist Page' do
     
     # User Story 2, Parent Show 
 
-    # As a visitor
-    # When I visit '/parents/:id'
-    # Then I see the parent with that id including the parent's attributes
     describe 'As a visitor' do
       describe 'When I visit /artists/:id' do
         it 'Then I see the artist with that id including the artists attributes' do
@@ -26,11 +23,6 @@ RSpec.describe 'Artist Page' do
     end
 
     # User Story 7, Parent Child Count
-
-    # As a visitor
-    # When I visit a parent's show page
-    # I see a count of the number of children associated with this parent
-    # end
 
     describe 'As a visitor' do
       describe 'When I visit an artist show page' do

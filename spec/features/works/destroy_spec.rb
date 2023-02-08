@@ -10,14 +10,6 @@ RSpec.describe 'Work Page' do
   
    # User Story 20, Child Delete 
 
-    # As a visitor
-    # When I visit a child show page
-    # Then I see a link to delete the child "Delete Child"
-    # When I click the link
-    # Then a 'DELETE' request is sent to '/child_table_name/:id',
-    # the child is deleted,
-    # and I am redirected to the child index page where I no longer see this child
-
     describe 'As a visitor' do
       describe 'When I visit a works show page' do
         describe 'Then I see a link to delete the work "Delete Work"' do
@@ -41,12 +33,6 @@ RSpec.describe 'Work Page' do
     end
 
     # User Story 23, Child Delete From Childs Index Page 
-
-    # As a visitor
-    # When I visit the `child_table_name` index page or a parent `child_table_name` index page
-    # Next to every child, I see a link to delete that child
-    # When I click the link
-    # I should be taken to the `child_table_name` index page where I no longer see that child
 
     describe 'As a visitor' do
       describe 'When I visit the `child_table_name` index page or a parent `child_table_name` index page' do

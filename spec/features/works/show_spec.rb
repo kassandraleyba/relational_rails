@@ -11,11 +11,6 @@ RSpec.describe 'Artists Works Page' do
     
     # User Story 4, Child Show 
 
-    # As a visitor
-    # When I visit '/child_table_name/:id'
-    # Then I see the child with that id including the child's attributes
-    # (data from each column that is on the child table)
-
     describe 'As a visitor' do
       describe 'When I visit /child_table_name/:id' do
         it 'Then I see the child with that id including the childs attributes' do

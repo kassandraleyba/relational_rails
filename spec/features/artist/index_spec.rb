@@ -9,10 +9,7 @@ RSpec.describe 'Artist Page' do
     let!(:work_2) { Work.create(title: 'Violon dIngres', available_for_purchase: false, artist_id: artist_1.id) }
     
     # User Story 1, Parent Index 
-    # For each parent table
-    # As a visitor
-    # When I visit '/parents'
-    # Then I see the name of each parent record in the system
+
     describe "As a visitor" do
       describe "When I visit '/artists'" do
         it 'Then I see the name of each artist record in the system' do
@@ -26,11 +23,6 @@ RSpec.describe 'Artist Page' do
     end
 
     # User Story 6, Parent Index sorted by Most Recently Created 
-
-    # As a visitor
-    # When I visit the parent index,
-    # I see that records are ordered by most recently created first
-    # And next to each of the records I see when it was created
 
     describe 'As a visitor' do
       scenario 'When I visit /artists I see when it was created' do
@@ -48,10 +40,6 @@ RSpec.describe 'Artist Page' do
 
     # User Story 9, Parent Index Link
 
-    # As a visitor
-    # When I visit any page on the site
-    # Then I see a link at the top of the page that takes me to the Parent Index
-
     describe "As a visitor" do
       describe "When I visit any page on the site" do
         it 'Then I see a link at the top of the page that takes me to the Parent Index' do
@@ -66,12 +54,6 @@ RSpec.describe 'Artist Page' do
     end
 
     # User Story 17, Parent Update From Parent Index Page 
-
-    # As a visitor
-    # When I visit the parent index page
-    # Next to every parent, I see a link to edit that parent's info
-    # When I click the link
-    # I should be taken to that parent's edit page where I can update its information just like in User Story 12
 
     describe "As a visitor" do
       describe "When I visit the artist index page" do

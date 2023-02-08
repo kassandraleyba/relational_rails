@@ -8,18 +8,7 @@ RSpec.describe 'Works Page' do
     let!(:work_1) { Work.create!(title: 'Glass Tears', available_for_purchase: false, artist_id: artist_1.id) }
     let!(:work_2) { Work.create!(title: 'Violon dIngres', available_for_purchase: false, artist_id: artist_1.id) } 
 
-      # User Story 14, Child Update 
-
-      # As a visitor
-      # When I visit a Child Show page
-      # Then I see a link to update that Child "Update Child"
-      # When I click the link
-      # I am taken to '/child_table_name/:id/edit' where I see a form to edit the child's attributes:
-      
-      # When I click the button to submit the form "Update Child"
-      # Then a `PATCH` request is sent to '/child_table_name/:id',
-      # the child's data is updated,
-      # and I am redirected to the Child Show page where I see the Child's updated information
+    # User Story 14, Child Update 
 
     describe 'As a visitor' do
       describe 'When I visit a Work Show page' do

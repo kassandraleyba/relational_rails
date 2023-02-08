@@ -10,14 +10,6 @@ RSpec.describe 'Artist Page' do
   
     # User Story 19, Parent Delete 
 
-    # As a visitor
-    # When I visit a parent show page
-    # Then I see a link to delete the parent
-    # When I click the link "Delete Parent"
-    # Then a 'DELETE' request is sent to '/parents/:id',
-    # the parent is deleted, and all child records are deleted
-    # and I am redirected to the parent index page where I no longer see this parent
-
     describe 'As a visitor' do
       describe 'When I visit a parent show page' do
         describe 'Then I see a link to delete the parent' do
@@ -41,12 +33,6 @@ RSpec.describe 'Artist Page' do
     end
 
     # User Story 22, Parent Delete From Parent Index Page 
-
-    # As a visitor
-    # When I visit the parent index page
-    # Next to every parent, I see a link to delete that parent
-    # When I click the link
-    # I am returned to the Parent Index Page where I no longer see that parent
 
     describe 'As a visitor' do
       describe 'When I visit the parent index page' do
