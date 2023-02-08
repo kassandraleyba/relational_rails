@@ -4,6 +4,10 @@ class Artists::WorksController < ApplicationController
 
     if params[:sort] == "title"
       @works = @artist.works.sort_alphabetically
+    elsif params[:price].present?
+      # .present? asking if the price is there
+      # like an include?
+      @works = @artist.works.purchase_price(params[:price])
     else
       @works = @artist.works
     end
