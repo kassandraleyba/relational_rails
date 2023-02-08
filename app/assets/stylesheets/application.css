@@ -20,25 +20,17 @@
   background-color: white;
   margin: 20px;
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  background-color: rgb(250, 246, 241);
 }
 
 body {
   font-family: Robot Mono;
   padding: 20px;
   color: #2a2a2b;
+  background-color: rgb(250, 246, 241);
 }
 
 a {
-  /* background-color: #35785e; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 8px; */
- 
   width: 197px;
   height: 20px;
   font-family: Robot Mono;
@@ -52,11 +44,7 @@ a {
   box-sizing: border-box;
   width: 150px;
   height: 48px;
-  /* background: #3277FC; */
   background: #0b8795;
-  /* border: 1px solid #D9D9D9; */
-  /* box-shadow: 0px 4px 3px 1px rgba(0, 0, 0, 0.6); */
-  /* border-radius: 16px; */
   text-decoration: none;
   font-family: Robot Mono;
   padding: 15px;
@@ -116,6 +104,14 @@ img {
   padding: 20px;
   display: flex;
   flex-direction: column;
+
+  width: 800px;
+  width: 575px;
+
+  background: #EA9A6D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  color: white;
 }
 
 .name-create {
@@ -142,13 +138,6 @@ img {
   color: white;
 }
 
-/* .specific-artist {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  text-align: center;
-} */
-
 .create-button {
   background-color: rgb(113, 179, 123);
   border-radius: 6px;
@@ -173,9 +162,33 @@ img {
   color: white;
 }
 
+.price-form {
+  font-family: Robot Mono;
+  font-size: 18px;
+  padding: 30px;
+  margin-top: 20px;
+  color: #2a2a2b;
+  display: flex;
+  flex-direction: column;
+
+  height: 67px;
+  width: 201px;
+
+  background: #EA9A6D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  color: white;
+}
+
 .edit-button {
   background-color: rgb(33, 178, 211);
   border-radius: 6px;
   color: white;
   font-size: 12px;
+}
+
+.edit-delete {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }

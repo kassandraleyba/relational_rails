@@ -44,7 +44,7 @@ RSpec.describe 'Artist Page' do
             it 'Im taken back to the Artists works Index Page where I see all of the artist work in alphabetical order' do
               visit "/artists/#{artist_1.id}/works"
             
-              click_link("Sort Alphabetically")
+              click_link("Sort")
               
               expect(current_path).to eq("/artists/#{artist_1.id}/works")
               expect(work_1.title).to appear_before(work_2.title)

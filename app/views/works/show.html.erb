@@ -2,9 +2,20 @@
   <%= link_to "Welcome Page", "/" %>
 </div>
 
-<h1><%= @work.title %></h1>
-<h4>Available For Purchase: <%= @work.available_for_purchase %></h4>
-<p>Price: $<%= @work.price %></p> 
-<%= button_to "Edit #{@work.title}", "/works/#{@work.id}/edit", method: :get, :class => "edit-button" %>
-<%= button_to "Delete", "/works/#{@work.id}", method: :delete, :class => "edit-button" %>
+<div class="artist-header">
+  <h1><%= @work.title %></h1>
+</div>
+
+<div class="artist-main">
+  <div class="name-create">
+    <%# <h1><%= @work.title</h1> %>
+    <h4>Available For Purchase: <%= @work.available_for_purchase %></h4>
+    <p>Price: $<%= @work.price %></p> 
+  </div>
+
+  
+  <%= button_to "Edit #{@work.title}", "/works/#{@work.id}/edit", method: :get, :class => "edit-button" %>
+  <%= button_to "Delete", "/works/#{@work.id}", method: :delete, :class => "edit-button" %>
+</div>
+
 

@@ -1,7 +1,7 @@
 <div class="right-button">
   <%= link_to "Welcome Page", "/" %>
   <%= link_to "New Works", "/artists/#{@artist.id}/works/new" %>
-  <%= link_to "Sort Alphabetically", :sort=> "title" %>
+  <%= link_to "Sort", :sort => "title" %>
 </div>
 
 <div class="artist-header">
@@ -10,14 +10,18 @@
 
 <div class="artist-main">
   <% @works.each do |work| %>
-    <h3>Title: <%= work.title %></h3>
-    <p>Price: <%= work.price %></p>
+
+    <div class="name-create"> 
+      <h3>Title: <%= work.title %></h3>
+      <p>Price: <%= work.price %></p>
+    </div>
+
     <p>Available For Purchase: <%= work.available_for_purchase %></p>
     <%= button_to "Delete #{work.title}", "/works/#{work.id}", method: :delete, :class => "edit-button" %>
   <% end %>
 </div>
 
-<div class="edit-form">
+<div class="price-form">
   <%= form_with url: "/artists/#{@artist.id}/works", method: :get, local: true do |form| %>
 
     <%= form.label :price, "Price:" %>
